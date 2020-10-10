@@ -11,7 +11,7 @@ class Main
             System.out.println(length());
             System.out.println(equalSlices(11, 7, 2));
             System.out.println(rps("rock","paper"));
-            System.out.println(differenceMinMax());
+            System.out.println(differenceMinMax());h
         }
 
         private static double totalD(double sH, double sL, double towerH) {
