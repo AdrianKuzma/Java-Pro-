@@ -9,8 +9,12 @@ class Main
             System.out.println(isTriangle(2, 3, 4));
             System.out.println(length());
             System.out.println(equalSlices(11, 7, 2));
+            System.out.println(palindrome("reviver"));
             System.out.println(rps("rock","paper"));
             System.out.println(differenceMinMax());
+            System.out.println(waron());
+            System.out.println(endw("convention", "tio"));
+            System.out.println(rook("F5","C5"));
         }
 
         private static double totalD(double sH, double sL, double towerH) {
@@ -45,7 +49,12 @@ class Main
             double x = p * se;
             return x <= ts;
         }
-
+        private static boolean palindrome(String w) {
+            String w2 = "";
+            for (int i = w.length() - 1;i >= 0; i--)
+                w2 = w2 + w.charAt(i);
+            return w2.equals(w);
+        }
         private static String rps (String p1, String p2){
             if (p1.equals(p2))
                 return "TIE";
@@ -72,4 +81,33 @@ class Main
             return max-min;
         }
 
+        public static int waron(){
+            int[] arr = {2, 8, 7, 5};
+            int e = 0; int o = 0;
+            for(var i = 0; i < arr.length;i++){
+                if(i % 2 == 0)
+                    e = i + e;
+                else
+                    o = i + o;
+            }
+            if(e < o)
+                return o - e;
+            else
+                return e - o;
+        }
+
+        private static boolean endw(String word,String end){
+        int a = word.length();
+        int b = end.length();
+        int c = a - b;
+            return word.substring(c).equals(end);
+        }
+
+        private static boolean rook(String r1,String r2){
+            for(var i = 0; i < r1.length(); i++){
+                    if(r1.charAt(i) == r2.charAt(i))
+                        return true;
+                    }
+            return false;
+        }
 }
