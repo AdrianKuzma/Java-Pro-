@@ -1,6 +1,5 @@
 package com.company;
 import java.util.Arrays;
-import java.util.Scanner;
 
 class Main
 {
@@ -11,7 +10,7 @@ class Main
             System.out.println(length());
             System.out.println(equalSlices(11, 7, 2));
             System.out.println(rps("rock","paper"));
-            System.out.println(differenceMinMax());h
+            System.out.println(differenceMinMax());
         }
 
         private static double totalD(double sH, double sL, double towerH) {
@@ -43,29 +42,24 @@ class Main
         }
 
         private static boolean equalSlices(double ts, double p, double se){
-            int x = (int) (p * se);
-            if (x <= ts) {
-                return true;
-            }
-            else {
-                return false;
-            }
+            double x = p * se;
+            return x <= ts;
         }
 
         private static String rps (String p1, String p2){
-            if (p1 == p2)
+            if (p1.equals(p2))
                 return "TIE";
-            else if (p1 == "rock" && p2 == "scissors")
+            else if (p1.equals("rock") && p2.equals("scissors"))
                 return "p1 wins";
-            else if (p1 == "paper" && p2 == "rock")
+            else if (p1.equals("paper") && p2.equals("rock"))
                 return "p1 wins";
-            else if (p1 == "scissors" && p2 == "paper")
+            else if (p1.equals("scissors") && p2.equals("paper"))
                 return "p1 wins";
             else return "p2 wins";
         }
 
         public static int differenceMinMax() {
-            int[] array = {10, 4, 1, 4, -10, -50, 32, 21};;
+            int[] array = {10, 4, 1, 4, -10, -50, 32, 21};
             int max = array[0];
             int min = array[0];
             for(int i = 1; i < array.length; i++)
